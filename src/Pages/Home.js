@@ -1,13 +1,21 @@
 import React from 'react'
 import Header from '../Components/Header'
 import Banner from "../Components/Banner"
+import SimpleImageSlider from "react-simple-image-slider"
 import "../Styles/Home.css"
 function Home() {
+    
     return (
         <div className="Home">
-            <Header />
+            <div className="home-header">
+                <Header />
+            </div>
             {/* Banner */}
-            <Banner />
+            <div className="home-banner">
+                <Banner />
+                {/* <Banner />
+                <Banner /> */}
+            </div>
         </div>
     )
 }
