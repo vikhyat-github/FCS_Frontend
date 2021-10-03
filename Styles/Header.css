@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Header{
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    /* position: fixed; */
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.11);
+}
+
+
+.logo{
+    flex: 0.2;
+    text-align: center;
+    /* background-color: aqua; */
+}
+.icon-container{
+    /* background-color: blue; */
+    flex: 0.2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
+.icon{
+    cursor: pointer;
+    font-size:24px !important;
+    margin-left:20px ;
+} 
+.search-bar{
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+.search-bar>:last-child{
+    cursor: pointer;
+}
+.search-bar>input{
+    width: 100%;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid rgba(0,0,0,0.11);
+}
+.search-bar>input:focus{
+    outline: none;
+    border-color: black;
+}
+
+.category{
+    /* background-color: red; */
+    /* padding: 10px; */
+    margin: 10px;
+    flex: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.category>h2{
+    font-size: 24px;
+    padding: 4px;
+    cursor: pointer;
+    margin: 0px 10px;
+    font-weight: 400;
+    color: rgb(156, 156, 156);
+    transition: all 0.2 ease-in;
+}
+.category > h2:hover{
+
+    /* background-color: black; */
+    color: black;
+    /* font-weight: 400; */
+    border-radius: 2px;
+}

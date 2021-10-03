@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from "./Components/Header"
+// import Header from "./Components/Header"
 import Home from "./Pages/Home"
 import Login from './Pages/Login';
 import { BrowserRouter as Router,
