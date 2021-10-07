@@ -1,11 +1,9 @@
 import React from 'react'
 import "../Styles/Login.css"
-import { Button, TextField } from '@material-ui/core'
+import { TextField } from '@material-ui/core'
 import { Icon } from 'semantic-ui-react'
-import Image from "../Assets/img2.jpg";
+import Image from "../Assets/login_page_illustration.jpg";
 import { BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
     useRouteMatch } from "react-router-dom"
 function Login() {

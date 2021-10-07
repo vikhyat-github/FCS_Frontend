@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../Components/Header'
 import Banner from "../Components/Banner"
-import SimpleImageSlider from "react-simple-image-slider"
 import "../Styles/Home.css"
 function Home() {
     
