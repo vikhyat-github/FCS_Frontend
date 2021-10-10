@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Components/Header'
 import Banner from "../Components/Banner"
+import ProductCard from '../Components/ProductCard'
 import "../Styles/Home.css"
 function Home() {
     
@@ -15,23 +16,10 @@ function Home() {
                 {/* <Banner />
                 <Banner /> */}
             </div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
+            <div className="product">
+                <ProductCard/>
+            </div>
+            
         </div>
     )
 }
