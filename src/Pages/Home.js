@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../Components/Header";
 import Banner from "../Components/Banner";
 import ProductCard from "../Components/ProductCard";
-
 import "../Styles/Home.css";
+import Footer from "../Components/Footer";
 function Home() {
   return (
     <div className="Home">
@@ -36,6 +36,7 @@ function Home() {
       <div>Hello</div>
       <div>Hello</div>
       <div>Hello</div>
+      <Footer />
     </div>
   );
 }
