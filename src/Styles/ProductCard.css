@@ -16,7 +16,6 @@
   padding-bottom: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  
 }
 .imageContainer > img {
   width: auto;
@@ -29,18 +28,17 @@
   transform: scale(1);
   opacity: 0.9;
   -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .2s ease-in-out;
-	transition: .2s ease-in-out;
+  transform: scale(1);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.imageContainer:hover >img {
+.imageContainer:hover > img {
   -webkit-transform: scale(1.2);
-	transform: scale(1.2);
+  transform: scale(1.2);
   overflow: hidden;
-  opacity:1;
+  opacity: 1;
 }
-
 
 .product-body > h2 {
   font-size: 20px;
@@ -52,14 +50,11 @@
   max-height: 50px;
   overflow: hidden;
 }
-.price-Heart{
-
+.price-Heart {
   display: flex;
   /* align-items:center ; */
   justify-content: space-between;
   max-height: 45px;
-  
-  
 }
 .price-Heart > p {
   color: rgb(173, 0, 0);
@@ -69,8 +64,6 @@
   padding-left: 5px;
   /* background-color: blueviolet; */
   /* margin-top: 5px; */
-  
-  
 }
 .fa-heart {
   color: pink;
@@ -88,7 +81,6 @@
   /* vertical-align: 2px; */
   margin-right: 20px;
   padding-top: 5px;
-  
 }
 
 .button {
@@ -118,5 +110,3 @@
   /* letter-spacing: 1px; */
   transform: scale(1.01);
 }
-
-
