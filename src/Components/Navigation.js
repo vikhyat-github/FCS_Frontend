@@ -7,12 +7,14 @@ import { BrowserRouter as Router,
   Route,
   Link,
   useRouteMatch } from "react-router-dom"
+import SignUp from '../Pages/SignUp';
 function Navigation() {
     return (
         <Router >
             <Switch>
             <Route component={Home} exact path="/"/>
             <Route component={Login} exact path="/login"/>
+            <Route component={SignUp} exact path="/signup"/>
             <Route component={Checkout} exact path="/checkout" />  
             </Switch>  
         </Router>

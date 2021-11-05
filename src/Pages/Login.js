@@ -1,12 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../Styles/Login.css"
 import { TextField } from '@material-ui/core'
 import { Icon } from 'semantic-ui-react'
 import Image from "../Assets/login_page_illustration.jpg";
-import { BrowserRouter as Router,
-    Link,
-    useRouteMatch } from "react-router-dom"
+import { Link } from "react-router-dom"
+import {actionTypes, reducer} from "../app/reducer";
+import { useStateValue } from "../StateProvider"
 function Login() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [{}, dispatch] = useStateValue();
+    const login = () => {
+        console.log(email)
+        fetch("http://localhost:5000/api/auth/login", {
+            method: 'POST',
+            mode:'cors',
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body : JSON.stringify({
+                email: email,
+                password : password
+            })
+        }).then(res => res.json()).then(data => dispatch({
+            type: actionTypes.SET_USER,
+            user: data
+        }))
+    }
     return (
         <div className="Login">
             <div className="login__left">
@@ -25,6 +46,7 @@ function Login() {
                             autoComplete="current-email"
                             fullWidth
                             variant="outlined"
+                            onChange={e=>setEmail(e.target.value)}
                         />
                         <TextField className="text-field"
                             id="outlined-password-input"
@@ -33,8 +55,9 @@ function Login() {
                             autoComplete="current-password"
                             fullWidth
                             variant="outlined"
+                            onChange={e=>setPassword(e.target.value)}
                         />
-                        <div className="login__button" >Login</div>            
+                        <div className="login__button" onClick={login}>Login</div>            
                     </div>
                     <div className="other__option">
                         <span className="text__container"> OR </span>

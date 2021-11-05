@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     right: 0;
-    /* z-index: 100; */
+    z-index: 100;
     width: 100vw;
     position: fixed;
     display: flex;
@@ -38,6 +38,10 @@
     font-size:24px !important;
     margin-left:20px ;
 } 
+.icon-avatar{
+    font-size: 24px !important;
+    margin-left: 20px;
+}
 .search-bar{
     flex: 0.2;
     display: flex;

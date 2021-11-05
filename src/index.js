@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css'
+import reducer, {initialState}  from "./app/reducer";
+import {StateProvider} from "./StateProvider";
 ReactDOM.render(
   <React.StrictMode>
+    <StateProvider initialState={initialState} reducer={reducer} children={App} >
     <App />
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

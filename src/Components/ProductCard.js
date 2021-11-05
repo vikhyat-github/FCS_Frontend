@@ -1,5 +1,3 @@
-import { colors, Hidden } from "@material-ui/core";
-import { grey } from "@material-ui/core/colors";
 import React from "react";
 import { useEffect, useState } from "react";
 import "../Styles/ProductCard.css";
@@ -18,9 +16,9 @@ function ProductCard() {
       });
   }, []);
   return (
-    <div class="product-deck">
-      <div class="product-body">
-        <div class="imageContainer" style={{ overflow: "hidden" }}>
+    <div class="product-deck" >
+      <div class="product-body" style={{backgroundColor:"white"}}>
+        <div class="imageContainer" style={{ overflow: "hidden"}}>
           <img src={product.image} alt="..." />
         </div>
         <h2>{product.title}</h2>
