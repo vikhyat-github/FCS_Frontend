@@ -2,21 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "../Styles/ProductCard.css";
 
-function ProductCard() {
+function ProductCard( {product} ) {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  const [product, setPoduct] = useState({});
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products/3")
-      .then((res) => res.json())
-      .then((data) => {
-        setPoduct(data);
-        console.log(data);
-      });
-  }, []);
   return (
-    <div class="product-deck" >
+    <div class="product_deck" >
       <div class="product-body" style={{backgroundColor:"white"}}>
         <div class="imageContainer" style={{ overflow: "hidden"}}>
           <img src={product.image} alt="..." />

@@ -1,74 +1,61 @@
-import React from "react"
-import "../Styles/item1.css"
-import IMG from '../Assets/images/fimg1.jpg'
-import IMG1 from '../Assets/images/fimg2.jpg'
-import IMG2 from '../Assets/images/fimg3.jpg'
-import Star from '../Assets/images/str.jpg'
-import { Button } from "semantic-ui-react"
-import "../Styles/Header.css"
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import SearchIcon from '@material-ui/icons/Search';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import React, {useState, useEffect} from "react"
+import "../Styles/Item1.css"
+import { Icon } from "semantic-ui-react"
 import Header from '../Components/Header.js'
-
+import Footer from '../Components/Footer'
 function Item(){
-
+    const [ product , setProduct] = useState({})
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products/1')
+            .then(res=>res.json())
+            .then(data=>setProduct(data))
+    }, [])
     return(
-    <div className="Logo">
+        <div className="item__page">
+            <Header/>
+            <div style={{display:'flex', flexDirection:'row', marginTop:100, height:'100%'}}>
+                <div className="left__div" >
+                    <img src={product.image} alt="product Image" />
+                </div>
+                <div className="right__div">
+                    <div className="info__section">
 
-
-        <Header></Header>
-
-
-        <div className="main">
-
-        <div className="image">
-        
-        <img src={IMG} height={250} width={250}/>
-        <img src={IMG1} height={250} width={250}/>
-        <div><img src={IMG2} height={250} width={250}/></div>
+                        <h2 className="product__title">{product.title}</h2>
+                        <p className="product__description">{product.description}</p>
+                        <div style={{paddingInline:20, display:'flex', alignItems:'center'}}>
+                            <Icon name="rupee" size='big' className="rupee-icon"/> 
+                            : 
+                            <p style={{fontSize:20, fontWeight:'bold'}}>{product.price}</p> 
+                        </div>
+                        <div style={{paddingInline:20}}>
+                            <div style={styles.button}>
+                                Add to Cart
+                            </div>
+                            <div style={{...styles.button, background:'#fdee02'}}>
+                                Buy Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>
-        
-        <div className="text">
-        <div className="firstline">
-        <h1>PHILIPS DAILY COLLECTION 600 Watts</h1>
-        </div> 
-        <div className="secondline">Product ID : 4390</div>
-        <div className="thirdline">Ratings : 4.4/5</div>
-
-
-        <h1>MRP 16,900.00</h1>
- 
-        <div><Button className="button1">Add to Cart</Button></div>
-
-        <div><Button className="button2">Add to Wishlist</Button></div>
-
-        <div className="para">
-            <h2>Product details:</h2>
-            <h2>PHILIPS 6000 watts toaster</h2>
-            <h2>2 years warranty</h2>
-            <h2>20% off on payment with paytm</h2>
-        </div>
-        <h2>Rate is out of 5 stars</h2>
-        <div className="rating">
-            <img src={Star} height={25} width={25}/>
-            <img src={Star} height={25} width={25}/>
-            <img src={Star} height={25} width={25}/>
-            <img src={Star} height={25} width={25}/>
-            <img src={Star} height={25} width={25}/>
-
-        </div>
-
-        </div>
-
-
-    </div>
-
-    </div>
-     
-
     )
 }
 
 export default Item
+
+const styles = {
+    button: {
+        padding:20, 
+        background:'#fcc403', 
+        width:"30%", 
+        textAlign:'center', 
+        borderRadius:5, 
+        marginBlock:10, 
+        fontSize:20, 
+        fontWeight:"600", 
+        color:'white', 
+        cursor:'pointer'
+    }
+}

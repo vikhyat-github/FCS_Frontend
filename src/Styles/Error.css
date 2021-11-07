@@ -1,0 +1,26 @@
+.error__page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.banner{
+    object-fit: contain;
+    padding: 1rem;
+    width: 60rem;
+    /* background-color: aqua; */
+}
+.btn{
+    font-size: 24px;
+    background-color: orange;
+    border: none;
+    border-radius: 40px;
+    padding: 1rem 2rem 1rem 2rem;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 200ms ease-in-out, box-shaddow 200ms ease-in-out;
+}
+.btn:hover{
+    /* background-color: rgb(226, 148, 2); */
+    box-shadow: 0px 10px 24px rgba(0,0,0,0.21);
+}

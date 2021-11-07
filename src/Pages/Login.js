@@ -3,10 +3,12 @@ import "../Styles/Login.css"
 import { TextField } from '@material-ui/core'
 import { Icon } from 'semantic-ui-react'
 import Image from "../Assets/login_page_illustration.jpg";
-import { Link } from "react-router-dom"
-import {actionTypes, reducer} from "../app/reducer";
+import { Link, useHistory } from "react-router-dom"
+import {actionTypes} from "../app/reducer";
 import { useStateValue } from "../StateProvider"
+
 function Login() {
+    const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [{}, dispatch] = useStateValue();
@@ -23,10 +25,16 @@ function Login() {
                 email: email,
                 password : password
             })
-        }).then(res => res.json()).then(data => dispatch({
-            type: actionTypes.SET_USER,
-            user: data
-        }))
+        }).then(res => res.json()).then(data =>
+           { dispatch({
+                type: actionTypes.SET_USER,
+                user: data
+            }
+            )
+            history.push("/")
+        } 
+        )
+        // userHasAuthenticated(true)
     }
     return (
         <div className="Login">
@@ -69,8 +77,11 @@ function Login() {
                         </div>
                     </div>
                     <div className="lower__section">
-                        <Link to="forgot__password">Forgot Password?</Link>
-                        <div className="signup__button">Sign up</div>
+                        <Link to="/">Forgot Password?</Link>
+                        <Link to="/signup" style={{color:'inherit'}}>
+                        
+                            <div className="signup__button">Sign up</div>
+                        </Link>
                         {/* <Button variant="outlined">Sign up</Button> */}
                     </div>
                 </div>

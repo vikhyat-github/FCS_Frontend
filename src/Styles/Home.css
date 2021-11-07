@@ -22,3 +22,13 @@
     align-items: center;
     justify-content: flex-start;
 }
+.product__section {
+    justify-content: center;
+    width: 100%;
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: min-content min-content min-content min-content;
+    grid-auto-flow: dense;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
