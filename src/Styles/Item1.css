@@ -1,0 +1,53 @@
+.text{    /* padding: 10px; */
+   color: black;
+   font-size: large;
+   font-weight: bold;
+   text-align: left;
+   margin: 2px;
+}
+
+.image{
+    text-align: center;
+}
+
+.firstline{
+    color :violet;
+    font-size: large;
+    font-style: italic;
+    text-decoration-line: underline;
+}
+ 
+ .main{
+    display: flex;
+     margin-top: 100px;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+
+
+.secondline{
+    color:black;
+    font-size:small;
+    font-style:normal;
+}
+
+
+.thirdline{
+    color:black;
+    font-size:small;
+    font-style:normal;
+}
+
+.button1{
+    background-color: darkorange !important;
+}
+
+.button2{
+    background-color: darkgreen !important;
+}
+
+.para{
+    background-color:darkgray;
+    color:black;
+}
