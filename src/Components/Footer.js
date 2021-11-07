@@ -3,6 +3,7 @@ import React from 'react'
 import { Icon } from 'semantic-ui-react'
 import "../Styles/Footer.css"
 import sourav_profile from "../Assets/sourav_profile.jpg"
+
 import { Avatar } from '@material-ui/core'
 const Team = [
     {
