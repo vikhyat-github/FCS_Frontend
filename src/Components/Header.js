@@ -28,7 +28,9 @@ function Header() {
             </div>
             <div className="icon-container">
                 <FavoriteBorderIcon className="icon" />
-                <Avatar src={user? user.image : ""} className="icon-avatar"/>
+                <Link to="/profile">
+                    <Avatar src={user? user.image : ""} className="icon-avatar"/>
+                </Link>
                 <Link to="/checkout" style={{color:'inherit'}}>
                     <ShoppingCartIcon className="icon"/>
                 </Link>

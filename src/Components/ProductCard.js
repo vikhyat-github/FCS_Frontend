@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/ProductCard.css";
 
 function ProductCard( {product} ) {
@@ -20,9 +21,11 @@ function ProductCard( {product} ) {
             className={click ? "fa fa-heart fa-2x" : "fa fa-heart-o fa-2x"}
           ></i>
         </div>
-        <button href="#" class="button">
-          View Product
-        </button>
+        <Link to={`/product${product.id}`}>
+          <button href="#" class="button">
+            View Product
+          </button>
+        </Link>
       </div>
     </div>
   );

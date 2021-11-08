@@ -5,23 +5,22 @@ import "../Styles/Checkout.css"
 import { Icon } from 'semantic-ui-react'
 import CheckoutProduct from '../Components/CheckoutProduct'
 import StripeContainer from '../Components/StripeContainer'
-import Home from './Home'
-
+import {selectItems, selectTotal} from '../slices/basketSlice';
+import {useSelector} from "react-redux";
 function Checkout() {
-    const [quantity, setQuantity] = useState(0)
-    const products = 1
-    const [productsArray, setArray] = useState([])
+    const items = useSelector(selectItems);
+    const Total  = useSelector(selectTotal);
     const [buyItem,setBuyItem]=useState(false)
-    useEffect(()=>{
-        fetch('https://fakestoreapi.com/products').then(res=> res.json()).then(data=>{
-            setArray(data)    
-        console.log(data)})
-    },[])
+    // useEffect(()=>{
+    //     fetch('https://fakestoreapi.com/products').then(res=> res.json()).then(data=>{
+    //         setArray(data)    
+    //     console.log(data)})
+    // },[])
     return (
         buyItem ?<StripeContainer/>:
       <div className="checkout">
         <Header />
-        {products == 0 ? (
+        {items.length == 0 ? (
           <div className="no__product">
             <img src={Image} />
             <span>Your Cart is Empty</span>
@@ -30,11 +29,11 @@ function Checkout() {
           <div className="products">
             {/* List of added products in the cart */}
             <div className="products__list">
-              {productsArray.map((product, index) => (
+              {items.map((product, index) => (
                 <CheckoutProduct
                   product={product}
-                  quantity={quantity}
-                  setQuantity={setQuantity}
+                  quantity={product.quantity}
+                  // setQuantity={setQuantity}
                   key={index}
                 />
               ))}
@@ -67,7 +66,7 @@ function Checkout() {
                   <span
                     style={{ fontSize: 20, fontWeight: "600", marginLeft: 20 }}
                   >
-                    Subtotal ({productsArray.length}: item)
+                    Subtotal ({items.length}: item)
                   </span>
                   <div
                     style={{
@@ -78,14 +77,14 @@ function Checkout() {
                   >
                     <Icon name="rupee" size="mini" className="rupee-icon" />
                     <span style={{ fontSize: 18, fontWeight: "600" }}>
-                      15598
+                      {Total}
                     </span>
                   </div>
                 </div>
                 <div style={{ paddingLeft: 20, paddingRight: 20 }}>
                   <div
                     className="checkout__btn"
-                    onClick={() => setBuyItem (true)}
+                    onClick={() => setBuyItem(true)}
                   >
                     Proceed to Checkout
                   </div>

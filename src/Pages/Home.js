@@ -14,15 +14,13 @@ function Home() {
   }, [])
   return( 
     <div className="Home">
-      <div className="home-header">
+      {/* <div className="home-header"> */}
         <Header />
-      </div>
+      {/* </div> */}
       {/* Banner */}
-      <div style={{marginTop:100}}>
-        <div className="home-banner">
+      <div style={{marginTop:100, width:"100vw"}}>
+        <div className="home-banner" style={{width:"100vw"}}>
           <Banner />
-          {/* <Banner />
-                  <Banner /> */}
         </div>
         <div className="product__section" style={{marginBottom:40}}>
           {Products.map((product, idx) => {

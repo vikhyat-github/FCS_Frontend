@@ -45,6 +45,7 @@ function SignUp() {
                         <p>Sign In</p>
                         <div className="inputs">
                             <TextField className="text-field"
+                                
                                 id="outlined-text-input"
                                 label="Your Full Name"
                                 type='text'

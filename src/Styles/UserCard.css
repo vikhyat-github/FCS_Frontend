@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.user__card{
+    border: 2px solid rgb(201, 201, 201);
+    transition: all 0.2s ease-in;
+}
+.user__card:hover{
+    border: 2px solid white;
+    box-shadow: 0.05rem 0.1rem 20px  rgba(0, 0, 0, 0.2);
+}
+.user__image{
+    border: 1px solid rgb(221, 221, 221);
+}

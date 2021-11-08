@@ -11,6 +11,7 @@ import SignUp from '../Pages/SignUp';
 import Item from "../Pages/Item"
 import {useStateValue} from "../StateProvider"
 import Error from '../Pages/Error';
+import Profile from '../Pages/Profile';
 function Navigation() {
     const [{user}, dispatch] = useStateValue()
     return (
@@ -21,8 +22,9 @@ function Navigation() {
                 <Route component={Login} exact path="/login"/>
                 <Route component={SignUp} exact path="/signup"/>
                 <Route component={Checkout} exact path="/checkout" /> 
-                <Route component={Item} exact path="/product" />
+                <Route component={Item} exact path="/product:productId" />
                 <Route component={StripeContainer} exact path="/payment"/> 
+                <Route component={Profile} exact path="/profile" />
                 <Route component={Error} exact path="/404" />
                 <Redirect to="/404" />
             </Switch> : 

@@ -3,13 +3,25 @@ import "../Styles/Item1.css"
 import { Icon } from "semantic-ui-react"
 import Header from '../Components/Header.js'
 import Footer from '../Components/Footer'
+import {useDispatch} from "react-redux";
+import {addToBasket} from "../slices/basketSlice";
+import {changeProduct} from "../slices/productSlice";
+import { useParams } from "react-router-dom"
 function Item(){
+    const dispatch = useDispatch();
+    let {productId} = useParams()
+    console.log(productId)
     const [ product , setProduct] = useState({})
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products/1')
+        fetch(`https://fakestoreapi.com/products/${productId}`)
             .then(res=>res.json())
             .then(data=>setProduct(data))
     }, [])
+    const addItemToBasket = () => {
+        const prod = {...product, quantity: 1}
+        // sending the product as an action to the REDUX store.. the basket slice
+        dispatch(addToBasket(prod))
+    }
     return(
         <div className="item__page">
             <Header/>
@@ -28,7 +40,7 @@ function Item(){
                             <p style={{fontSize:20, fontWeight:'bold'}}>{product.price}</p> 
                         </div>
                         <div style={{paddingInline:20}}>
-                            <div style={styles.button}>
+                            <div style={styles.button} onClick={addItemToBasket}>
                                 Add to Cart
                             </div>
                             <div style={{...styles.button, background:'#fdee02'}}>
