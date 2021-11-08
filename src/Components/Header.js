@@ -13,7 +13,7 @@ function Header() {
         <div className="Header">
             <div className="logo">
                 <Link to="/" style={{color:'inherit'}}>
-                    <h1>Fake Store</h1>
+                    <h1 style={{color:'orange'}}>Fake Store</h1>
                 </Link>
             </div>
             <div className="category">
