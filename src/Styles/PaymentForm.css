@@ -1,0 +1,111 @@
+.FormGroup {
+	margin: 0 0px 20px;
+	
+	border-style: none;
+	background-color:white;
+	will-change: opacity, transform;
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
+	border-radius: 4px;
+	margin-top: 10px;
+	margin-left: 20vw; 
+	/* margin-right: 10vw; */
+	place-items: centre;
+	height: 100px;
+	width: 60vw;
+	border: 1px solid black;
+	position:relative;
+	
+}
+.logo{
+	
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+.logo > img{
+	margin-top: 10px;
+	object-fit: contain;
+    /* filter: blur(0.1rem); */
+    width: 30%;
+}
+.data{
+	
+    place-items: center;
+}
+.FormRow {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	/* margin-left: 20%; */
+	/* margin-right: 20%; */
+	height: 100px;
+	justify-content: space-evenly;
+	/* position: relative; */
+	
+	
+	/* border: 1px solid black; */
+}
+
+.StripeElement {
+	width: 100%;
+	padding: 10px 20px 15px 0;
+}
+
+.StripeElement--webkit-autofill {
+	background: transparent !important;
+}
+
+.button1{
+
+	margin-left: 30%;
+	margin-right: 30%;
+	/* max-width: 50%; */
+	height: 100px;
+	
+}
+button {
+	display: inline-block;
+	
+	align-items: center;
+	width: calc(100%);
+	height: 50px;
+	background-color: black;
+	border-radius: 4px;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 100ms ease-in-out;
+	will-change: transform, background-color, box-shadow;
+	border-color: black;
+	
+}
+.button1 :hover{
+	transform: scale(1.02);
+}
+button >h1{
+	font-size: 24px;
+}
+
+button:active {
+	background-color:white;
+	
+	/* transform: scale(0.99); */
+	color: black;
+	border-radius: 4px;
+	border-color: black;
+	
+}
+.success > h2 {
+	font-size:60px;
+}
+
+.button2{
+	background-color: pink !important;
+	font-size: 20px !important;
+	color: black !important;
+	
+
+}
+

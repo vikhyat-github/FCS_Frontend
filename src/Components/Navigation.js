@@ -2,6 +2,8 @@ import React from 'react'
 import Home from "../Pages/Home"
 import Login from '../Pages/Login';
 import Checkout from "../Pages/Checkout"
+import StripeContainer from "../Components/StripeContainer"
+
 import { BrowserRouter as Router,
   Switch,
   Route, Redirect} from "react-router-dom"
@@ -14,12 +16,13 @@ function Navigation() {
     return (
         <Router >
             {
-            user ? <Switch>
+            !user ? <Switch>
                 <Route component={Home} exact path="/"/>
                 <Route component={Login} exact path="/login"/>
                 <Route component={SignUp} exact path="/signup"/>
                 <Route component={Checkout} exact path="/checkout" /> 
-                <Route component={Item} exact path="/product" /> 
+                <Route component={Item} exact path="/product" />
+                <Route component={StripeContainer} exact path="/payment"/> 
                 <Route component={Error} exact path="/404" />
                 <Redirect to="/404" />
             </Switch> : 
