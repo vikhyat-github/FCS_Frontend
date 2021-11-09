@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 import {useStateValue} from "../StateProvider"
 import { Avatar } from '@material-ui/core';
 function Header() {
-    const [{user}, dispatch] = useStateValue()
-    console.log(user)
+    const [{user}] = useStateValue()
     return (
         <div className="Header">
             <div className="logo">

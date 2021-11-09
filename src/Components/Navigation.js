@@ -13,7 +13,7 @@ import {useStateValue} from "../StateProvider"
 import Error from '../Pages/Error';
 import Profile from '../Pages/Profile';
 function Navigation() {
-    const [{user}, dispatch] = useStateValue()
+    const [{user}] = useStateValue()
     return (
         <Router >
             {

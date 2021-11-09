@@ -68,7 +68,7 @@ export default function PaymentForm() {
       {!accepted ? (
         <>
           <div className="logo">
-            <img src={creditlogo} />
+            <img src={creditlogo} alt="payment form illustration" />
           </div>
           <div className="data">
             <form onSubmit={handleSubmit}>

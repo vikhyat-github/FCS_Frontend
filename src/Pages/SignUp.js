@@ -1,15 +1,18 @@
 import {TextField } from '@material-ui/core'
 import React, {useState} from 'react'
+import { useHistory } from 'react-router';
+import { actionTypes } from '../app/reducer';
 import Image from "../Assets/login_page_illustration.jpg";
 import {checkDOB, checkMobile, checkName, checkPassword} from "../validation"
-// import bcrypt from "bcrypt"
+import {useStateValue} from "../StateProvider"
 function SignUp() {
+    const history = useHistory()
+    const [{}, dispatch] = useStateValue()
     const [name, setName] = useState({name:"", error:""})
     const [dob, setDOB] = useState({dob:"", error:""})
     const [email, setEmail] = useState({email:"", error:""})
     const [mobile, setMobile] = useState({mobile:"", error:""})
     const [password, setPassword] = useState({password:"", error:""})
-    // const []
     const [error, setError] = useState()
     const checkError = () => {
         if(!name.error && !dob.error && !mobile.error && !password.error && !error && !email.error) return true
@@ -31,13 +34,19 @@ function SignUp() {
                     dob: dob.dob,
                     mobile: mobile.mobile
                 })
-            }).then(res => res.json()).then(data => console.log(data))
+            }).then(res => res.json()).then(data => {
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: data
+                })
+                history.push("/")
+            })
         }
     }
     return (
             <div className="Login">
                 <div className="login__left">
-                    <img src={Image}/>
+                    <img src={Image} alt="login page illustration"/>
                 </div>
                 <div className="login__right">
     

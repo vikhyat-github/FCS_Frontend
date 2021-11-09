@@ -5,12 +5,10 @@ import Header from '../Components/Header.js'
 import Footer from '../Components/Footer'
 import {useDispatch} from "react-redux";
 import {addToBasket} from "../slices/basketSlice";
-import {changeProduct} from "../slices/productSlice";
 import { useParams } from "react-router-dom"
 function Item(){
     const dispatch = useDispatch();
     let {productId} = useParams()
-    console.log(productId)
     const [ product , setProduct] = useState({})
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${productId}`)
@@ -27,7 +25,7 @@ function Item(){
             <Header/>
             <div style={{display:'flex', flexDirection:'row', marginTop:100, height:'100%'}}>
                 <div className="left__div" >
-                    <img src={product.image} alt="product Image" />
+                    <img src={product.image} alt="product " />
                 </div>
                 <div className="right__div">
                     <div className="info__section">
@@ -40,10 +38,10 @@ function Item(){
                             <p style={{fontSize:20, fontWeight:'bold'}}>{product.price}</p> 
                         </div>
                         <div style={{paddingInline:20}}>
-                            <div style={styles.button} onClick={addItemToBasket}>
+                            <div className="add__to__cart"  onClick={addItemToBasket} >
                                 Add to Cart
                             </div>
-                            <div style={{...styles.button, background:'#fdee02'}}>
+                            <div className="buy__now" >
                                 Buy Now
                             </div>
                         </div>
@@ -59,15 +57,6 @@ export default Item
 
 const styles = {
     button: {
-        padding:20, 
-        background:'#fcc403', 
-        width:"30%", 
-        textAlign:'center', 
-        borderRadius:5, 
-        marginBlock:10, 
-        fontSize:20, 
-        fontWeight:"600", 
-        color:'white', 
-        cursor:'pointer'
+        
     }
 }

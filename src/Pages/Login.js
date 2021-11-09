@@ -11,10 +11,10 @@ function Login() {
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [{}, dispatch] = useStateValue();
+    const [ {}, dispatch] = useStateValue();
     const login = () => {
         console.log(email)
-        fetch("http://localhost:5000/api/auth/login", {
+        fetch("http://192.168.1.11:5000/api/auth/login", {
             method: 'POST',
             mode:'cors',
             headers: {
@@ -34,12 +34,11 @@ function Login() {
             history.push("/")
         } 
         )
-        // userHasAuthenticated(true)
     }
     return (
         <div className="Login">
             <div className="login__left">
-                <img src={Image}/>
+                <img src={Image} alt="login page illustration"/>
             </div>
             <div className="login__right">
 

@@ -1,12 +1,10 @@
 import React from 'react'
 import Header from "../Components/Header"
 import UserCard from '../Components/UserCard'
-import {useStateValue} from "../StateProvider"
 import { Icon } from 'semantic-ui-react'
 import "../Styles/Profile.css"
 import ChangesForm from '../Components/ChangesForm'
 function Profile() {
-    const [{user}, dispatch] = useStateValue()
 
     return (
         <div className="profile">
@@ -29,13 +27,3 @@ function Profile() {
 }
 
 export default Profile
-const styles = {
-    dataField : {
-        fontSize:20, 
-        color:"black", 
-        fontWeight:400, 
-        width:400, 
-        background:'#e8e8e8', 
-        padding:10, 
-        borderRadius:5}
-}

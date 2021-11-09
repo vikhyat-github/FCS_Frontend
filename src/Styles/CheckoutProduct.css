@@ -52,6 +52,9 @@
     cursor: pointer;
     user-select: none;
     font-weight: 600;
+    background-color: orange;
+    color: white;
+    border-radius: 4px;   
 }
 .add__button{
     border-right: 1px solid #4b4b4b;

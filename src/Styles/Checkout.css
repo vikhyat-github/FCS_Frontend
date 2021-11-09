@@ -17,17 +17,22 @@
     flex-direction: column;
     object-fit: contain;
     height: 80%;
+    margin-left: 25vw;
+    
 }
 .no__product> img{
-    width: 480px;
+    width: 60%;
     object-fit: contain;
+    
+    
 }
 .no__product > span{
     margin-top: 2rem;
     font-size: 40px;
-    font-weight: 600;
-    color: rgb(18, 171, 231);
+    font-weight: 8;
+    color: rgb(0, 0, 0);
     user-select: none;
+    
 }
 .products{
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import Header from "../Components/Header"
 import Image from "../Assets/EmptyCart.webp"
 import "../Styles/Checkout.css"
@@ -11,18 +11,14 @@ function Checkout() {
     const items = useSelector(selectItems);
     const Total  = useSelector(selectTotal);
     const [buyItem,setBuyItem]=useState(false)
-    // useEffect(()=>{
-    //     fetch('https://fakestoreapi.com/products').then(res=> res.json()).then(data=>{
-    //         setArray(data)    
-    //     console.log(data)})
-    // },[])
+    
     return (
         buyItem ?<StripeContainer/>:
       <div className="checkout">
         <Header />
-        {items.length == 0 ? (
+        {items.length === 0 ? (
           <div className="no__product">
-            <img src={Image} />
+            <img src={Image} alt="cart empty"/>
             <span>Your Cart is Empty</span>
           </div>
         ) : (
@@ -75,7 +71,7 @@ function Checkout() {
                       justifyContent: "center",
                     }}
                   >
-                    <Icon name="rupee" size="mini" className="rupee-icon" />
+                    <Icon name="dollar" size="mini" className="rupee-icon" />
                     <span style={{ fontSize: 18, fontWeight: "600" }}>
                       {Total}
                     </span>

@@ -49,3 +49,26 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
+.add__to__cart, .buy__now{
+    padding:20px; 
+    background:#fcc403; 
+    width:30%; 
+    text-align:center; 
+    border-radius:5px; 
+    margin-top:10px;
+    margin-bottom: 10px; 
+    font-size:20px; 
+    font-weight:600; 
+    color: white;
+    cursor:pointer;
+    transition:all 0.2s ease-in;
+}
+.buy__now{
+    background:#fdee02;
+}
+.add__to__cart:active{
+    background-color: rgb(190, 129, 14);
+}
+.buy__now:active{
+    background-color: #c2b617;
+}

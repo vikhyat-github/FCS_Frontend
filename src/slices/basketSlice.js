@@ -10,12 +10,19 @@ export const basketSlice = createSlice({
   reducers: {
     // Actions
     addToBasket: (state, action) => {
-      state.items = [...state.items, action.payload]
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id)
+      if(index>-1){
+        let newProd = {...state.items[index], quantity: state.items[index].quantity + 1}
+        state.items[index] = newProd
+      }
+      else{
+        state.items = [...state.items, action.payload]
+      }
     },
     removeFromBasket: (state, action) => {
       const index = state.items.findIndex(
         (basketItem) => basketItem.id === action.payload.id)
-      console.log(index)
       let newBasket = [...state.items];
 
       if(index >= 0)
@@ -27,13 +34,44 @@ export const basketSlice = createSlice({
       }
       state.items = newBasket;
     },
+    addQuantity: (state, action) => {
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id)
+
+      let newProd = {...state.items[index], quantity: state.items[index].quantity + 1}
+      state.items[index] = newProd 
+    },
+    deleteQuantity: (state, action) => {
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id
+      );
+      console.log(index);
+
+      const cartItem = state.items.find(
+        (item) => item.id === action.payload.id
+      );
+      let newBasket = [...state.items];
+      if (cartItem.quantity === 1) {
+        newBasket.splice(index, 1);
+        state.items = newBasket;
+        
+      } else {
+        let newProd = {
+          ...state.items[index],
+          quantity: state.items[index].quantity - 1,
+        };
+
+        state.items[index] = newProd;
+      }
+    },
+
   },
 });
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const { addToBasket, removeFromBasket, addQuantity, deleteQuantity } = basketSlice.actions;
 
 // Selectors - This is how we pull information from the Global store slice
 export const selectItems = (state) => state.basket.items;
 
-export const selectTotal = (state) => state.basket.items.reduce((total,item) => total + item.price,0)
+export const selectTotal = (state) => state.basket.items.reduce((total,item) => total + item.price*item.quantity,0)
 export default basketSlice.reducer;

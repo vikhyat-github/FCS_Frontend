@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/ProductCard.css";
 
@@ -8,9 +8,9 @@ function ProductCard( {product} ) {
   const handleClick = () => setClick(!click);
 
   return (
-    <div class="product_deck" >
-      <div class="product-body" style={{backgroundColor:"white"}}>
-        <div class="imageContainer" style={{ overflow: "hidden"}}>
+    <div className="product_deck" >
+      <div className="product-body" style={{backgroundColor:"white"}}>
+        <div className="imageContainer" style={{ overflow: "hidden"}}>
           <img src={product.image} alt="..." />
         </div>
         <h2>{product.title}</h2>
@@ -22,7 +22,7 @@ function ProductCard( {product} ) {
           ></i>
         </div>
         <Link to={`/product${product.id}`}>
-          <button href="#" class="button">
+          <button href="#" className="button">
             View Product
           </button>
         </Link>

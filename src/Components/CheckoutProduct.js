@@ -1,20 +1,33 @@
 import React from 'react'
 import "../Styles/CheckoutProduct.css"
+import {useDispatch} from "react-redux"
+import {addQuantity, deleteQuantity} from "../slices/basketSlice"
 function CheckoutProduct({product, quantity, setQuantity}) {
+    const dispatch = useDispatch()
+    const addItem = () => {
+        const id = product.id
+        const prod = {id}
+        dispatch(addQuantity(prod))
+    }
+    const subItem = () => {
+        const id = product.id
+        const prod = {id}
+        dispatch(deleteQuantity(prod))
+    }
     return (
         <div className="product__row" >
             <div style={{display:'flex', flexDirection:'row', width:"85%"}}>
                 <div style={{height:250, padding:10, alignItems:'center', display:'flex'}}>
-                    <img src={product.image} width={120}/>
+                    <img src={product.image} width={120} alt="checkout product img"/>
 
                 </div>
                 <div className="product__info">
                     <p className="product__title">{product.title}</p>
                     <p className="product__description">{product.description}</p>
                     <div className="controls">
-                        <span className="add__button" onClick={()=>{setQuantity(quantity+1)}}>+</span>
+                        <span className="add__button" onClick={addItem}>+</span>
                         <span>{quantity}</span>
-                        <span className="remove__button" onClick={()=>{if(quantity!==0)setQuantity(quantity-1)}}>-</span>
+                        <span className="remove__button" onClick={subItem} >-</span>
                     </div>
                 </div>
             </div>
