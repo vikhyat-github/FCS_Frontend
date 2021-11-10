@@ -17,7 +17,7 @@ function SignUp() {
     const [role, setRole] = useState({role:"", error:""})
     const [error, setError] = useState()
     const checkError = () => {
-        if(!name.error && !dob.error && !mobile.error && !password.error && !error && !email.error && role.error) return true
+        if(!name.error && !dob.error && !mobile.error && !password.error && !error && !email.error && !role.error) return true
         return false
     }
     const Signup = () => {
@@ -39,6 +39,7 @@ function SignUp() {
                     role:role.role
                 })
             }).then(res => res.json()).then(data => {
+                console.log(data)
                 dispatch({
                     type: actionTypes.SET_USER,
                     user: jwtDecode(data.accesstoken).user

@@ -10,7 +10,7 @@ function App() {
   const [{}, dispatch] = useStateValue()
   const [loadingState, setLoading] = useState(true)
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND}/api/auth/refreshLogin`, {
+    fetch(process.env.REACT_APP_REFRESHLOGIN, {
       method:"POST",
       credentials:'include',
       mode:'cors',
