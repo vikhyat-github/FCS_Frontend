@@ -5,6 +5,7 @@ import { useStateValue } from '../StateProvider'
 import { checkMobile } from "../validation"
 function ChangesForm() {
     const [{user}, dispatch] = useStateValue()
+    const [{accesstoken}, tokendispatch] = useStateValue()
     const [email, setEmail] = useState({email:user.email, error:""})
     const [mobile, setMobile] = useState({mobile:user.mobile, error:""})
     const [address, setAddress] = useState(user.address)
@@ -14,7 +15,8 @@ function ChangesForm() {
             method:"POST",
             mode:'cors',
             headers:{
-                "Content-Type" : "application/json"
+                "Content-Type" : "application/json",
+                Authorization : `Bearer ${accesstoken}`
             },
             body:JSON.stringify({email:user.email, newemail:email.email, address: address, mobile:mobile.mobile})
         }).then(res => res.json()).then(data =>{

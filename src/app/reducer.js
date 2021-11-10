@@ -1,8 +1,9 @@
-export const initialState = { user: null,};
+export const initialState = { user: null, accesstoken: null};
 
 
 export const actionTypes = {
     SET_USER: "SET_USER",
+    SET_TOKEN: "SET_TOKEN"
 };
 
 const reducer = (state, action) => {
@@ -13,8 +14,14 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.user,
             };
+            case actionTypes.SET_TOKEN:
+                return {
+                    ...state,
+                    accesstoken: action.accesstoken,
+                }
         default:
             return state;
+    
     }
 };
 

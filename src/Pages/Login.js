@@ -6,17 +6,20 @@ import Image from "../Assets/login_page_illustration.jpg";
 import { Link, useHistory } from "react-router-dom"
 import {actionTypes} from "../app/reducer";
 import { useStateValue } from "../StateProvider"
-
+import jwtDecode from 'jwt-decode';
 function Login() {
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [ {}, dispatch] = useStateValue();
+    const [{accesstoken}, tokenDispatch] = useStateValue()
+    console.log(`accesstoken is ${accesstoken}`)
     const login = () => {
         console.log(email)
-        fetch("http://192.168.1.11:5000/api/auth/login", {
+        fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
             mode:'cors',
+            credentials:'include',
             headers: {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -28,12 +31,19 @@ function Login() {
         }).then(res => res.json()).then(data =>
            { dispatch({
                 type: actionTypes.SET_USER,
-                user: data
-            }
-            )
+                user: jwtDecode(data.accesstoken).user
+            })
+            dispatch({
+                type: actionTypes.SET_TOKEN,
+                accesstoken: data.accesstoken
+            })
             history.push("/")
-        } 
-        )
+            
+        })
+
+        
+
+        
     }
     return (
         <div className="Login">

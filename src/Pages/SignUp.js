@@ -1,10 +1,11 @@
-import {TextField } from '@material-ui/core'
+import {Radio, TextField } from '@material-ui/core'
 import React, {useState} from 'react'
 import { useHistory } from 'react-router';
 import { actionTypes } from '../app/reducer';
 import Image from "../Assets/login_page_illustration.jpg";
 import {checkDOB, checkMobile, checkName, checkPassword} from "../validation"
 import {useStateValue} from "../StateProvider"
+import jwtDecode from 'jwt-decode';
 function SignUp() {
     const history = useHistory()
     const [{}, dispatch] = useStateValue()
@@ -23,6 +24,7 @@ function SignUp() {
             fetch("http://localhost:5000/api/auth/register", {
                 method:'POST',
                 mode: 'cors',
+                credentials:'include',
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -37,7 +39,11 @@ function SignUp() {
             }).then(res => res.json()).then(data => {
                 dispatch({
                     type: actionTypes.SET_USER,
-                    user: data
+                    user: jwtDecode(data.accesstoken).user
+                })
+                dispatch({
+                    type:actionTypes.SET_TOKEN,
+                    token: data.accesstoken
                 })
                 history.push("/")
             })

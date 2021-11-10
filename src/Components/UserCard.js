@@ -12,7 +12,7 @@ function UserCard() {
                 <div style={styles.dataField}>Name : <span style={{fontWeight:300}}>{user.name}</span></div>
                 <div style={styles.dataField}>DOB : <span style={{fontWeight:300}}>{user.dob}</span></div>
                 <div style={styles.dataField}>Email : <span style={{fontWeight:300}}>{user.email}</span></div>
-                <div style={styles.dataField}>Role : <span style={{fontWeight:300}}>Seller</span></div>
+                <div style={styles.dataField}>Role : <span style={{fontWeight:300}}>{user.role}</span></div>
                 <div style={styles.dataField}>Address : 
                     <div>
                         <span style={{fontWeight:300}}>{user.address.flat}, {user.address.locality} </span>

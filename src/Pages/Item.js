@@ -19,6 +19,7 @@ function Item(){
         const prod = {...product, quantity: 1}
         // sending the product as an action to the REDUX store.. the basket slice
         dispatch(addToBasket(prod))
+        
     }
     return(
         <div className="item__page">

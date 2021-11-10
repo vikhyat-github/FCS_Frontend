@@ -1,18 +1,22 @@
 import React from 'react'
 import "../Styles/CheckoutProduct.css"
 import {useDispatch} from "react-redux"
+import { useStateValue } from '../StateProvider'
 import {addQuantity, deleteQuantity} from "../slices/basketSlice"
 function CheckoutProduct({product, quantity, setQuantity}) {
     const dispatch = useDispatch()
+    const [{accesstoken}] = useStateValue()
     const addItem = () => {
         const id = product.id
         const prod = {id}
         dispatch(addQuantity(prod))
+        
     }
     const subItem = () => {
         const id = product.id
         const prod = {id}
         dispatch(deleteQuantity(prod))
+        
     }
     return (
         <div className="product__row" >
