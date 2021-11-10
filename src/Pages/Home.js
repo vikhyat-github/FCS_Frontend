@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 function Home() {
   const [Products, setProducts] = useState([])
   useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
+    fetch(`${process.env.REACT_APP_STORE}/products`)
     .then(res=>res.json())
     .then(data=>setProducts(data))
   }, [])

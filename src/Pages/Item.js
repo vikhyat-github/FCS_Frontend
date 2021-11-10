@@ -11,7 +11,7 @@ function Item(){
     let {productId} = useParams()
     const [ product , setProduct] = useState({})
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${productId}`)
+        fetch(`${process.env.REACT_APP_STORE}products/${productId}`)
             .then(res=>res.json())
             .then(data=>setProduct(data))
     }, [])

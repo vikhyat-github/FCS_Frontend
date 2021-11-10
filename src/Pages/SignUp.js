@@ -22,7 +22,7 @@ function SignUp() {
     }
     const Signup = () => {
         if(checkError() ) {
-            fetch("http://localhost:5000/api/auth/register", {
+            fetch(`${process.env.REACT_APP_BACKEND}/api/auth/register`, {
                 method:'POST',
                 mode: 'cors',
                 credentials:'include',

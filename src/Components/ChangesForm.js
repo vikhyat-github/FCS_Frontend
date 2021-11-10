@@ -11,7 +11,7 @@ function ChangesForm() {
     const [address, setAddress] = useState(user.address)
 
     const submitChanges = () => {
-        fetch("http://localhost:5000/update/profile", {
+        fetch(`${process.env.REACT_APP_BACKEND}/update/profile`, {
             method:"POST",
             mode:'cors',
             headers:{

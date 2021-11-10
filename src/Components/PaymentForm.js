@@ -44,7 +44,7 @@ export default function PaymentForm() {
       try {
         const { id } = paymentMethod;
         const response = await axios.post(
-          "http://localhost:5000/posts/payments",
+          `${process.env.REACT_APP_PAYMENT}`,
           {
             amount: 9999999,
             id: id,

@@ -16,7 +16,7 @@ function Login() {
     console.log(`accesstoken is ${accesstoken}`)
     const login = () => {
         console.log(email)
-        fetch("http://localhost:5000/api/auth/login", {
+        fetch(`${process.env.REACT_APP_BACKEND}/api/auth/refreshLogin`, {
             method: 'POST',
             mode:'cors',
             credentials:'include',
