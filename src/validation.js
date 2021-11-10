@@ -29,3 +29,13 @@ export const checkName = name => {
     }
     return ""
 }
+export const checkRole = role => {
+    if(role.toLowerCase()=="admin"){
+        return "You can choose only Seller or Buyer"
+    }
+    else if(role.toLowerCase()!="buyer" && role.toLowerCase()!="seller")
+    {
+        return "Please select valid role"
+    }
+    return ""
+}

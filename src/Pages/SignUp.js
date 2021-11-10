@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router';
 import { actionTypes } from '../app/reducer';
 import Image from "../Assets/login_page_illustration.jpg";
-import {checkDOB, checkMobile, checkName, checkPassword} from "../validation"
+import {checkDOB, checkMobile, checkName, checkPassword, checkRole} from "../validation"
 import {useStateValue} from "../StateProvider"
 import jwtDecode from 'jwt-decode';
 function SignUp() {
@@ -14,9 +14,10 @@ function SignUp() {
     const [email, setEmail] = useState({email:"", error:""})
     const [mobile, setMobile] = useState({mobile:"", error:""})
     const [password, setPassword] = useState({password:"", error:""})
+    const [role, setRole] = useState({role:"", error:""})
     const [error, setError] = useState()
     const checkError = () => {
-        if(!name.error && !dob.error && !mobile.error && !password.error && !error && !email.error) return true
+        if(!name.error && !dob.error && !mobile.error && !password.error && !error && !email.error && role.error) return true
         return false
     }
     const Signup = () => {
@@ -34,7 +35,8 @@ function SignUp() {
                     // password: bcrypt.hash(password, 10),
                     password : password.password,
                     dob: dob.dob,
-                    mobile: mobile.mobile
+                    mobile: mobile.mobile,
+                    role:role.role
                 })
             }).then(res => res.json()).then(data => {
                 dispatch({
@@ -141,7 +143,17 @@ function SignUp() {
                                 }}
                             />
                             <span style={{color:"red"}}>{error}</span>
-                            
+                            <TextField
+                                id="outlined-password-input"
+                                label="Role"
+                                type="text"
+                                autoComplete="current-password"
+                                fullWidth
+                                variant="outlined"
+                                error={role.error}
+                                onChange={e=>{setRole({...role, role:e.target.value, error:checkRole(e.target.value)})}}
+                            />
+                            <span>{role.error}</span>
                             <div className="login__button" onClick={Signup}>Sign in</div>            
                         </div>
                     </div>
