@@ -10,6 +10,9 @@
   margin-top: 10px;
   background-color: white;
   margin-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  
   
 }
 
@@ -21,16 +24,35 @@
 }
 
 .name{
-    float: left;
+    /* float: left; */
     /* background-color: tomato; */
-    width: 50%;
+    width: 40%;
     
     
     
 }
 
 .role{
-    margin-left: 50%;
-    /* background-color: blue; */
+    margin-left: 10%;
     
+    width: 30%;
+    /* background-color: blue; */
+
+    
+}
+.del{
+    
+    /* float: right; */
+    
+    width: 10%;
+    /* background-color: yellow; */
+    font-size: 2vw;
+    font-weight: 400;
+    color: grey;
+    margin-top: 6px;
+}
+
+.del:hover{
+  color: red;
+  transform: scale(1.01);
 }

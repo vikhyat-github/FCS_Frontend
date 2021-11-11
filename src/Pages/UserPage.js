@@ -7,7 +7,7 @@ import UserData from "./UserData";
 function UserPage() {
   const [Users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/user/getall")
+    fetch(`${process.env.REACT_APP_BACKEND}/user/getall`)
       .then((res) => res.json())
       .then((data) => {setUsers(data.users)
       console.log(data)});

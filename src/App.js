@@ -8,7 +8,7 @@ import { useStateValue } from './StateProvider';
 // import jwtDecode from 'jwt-decode';
 function App() {
   const [{}, dispatch] = useStateValue()
-  const [loadingState, setLoading] = useState(true)
+  const [loadingState, setLoading] = useState(false)
   useEffect(() => {
     fetch(`${process.env.REACT_APP_REFRESHLOGIN}`, {
       method:"POST",

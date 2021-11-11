@@ -18,7 +18,7 @@ function Navigation() {
     return (
         <Router >
             {
-            user ? <Switch>
+            !user ? <Switch>
                 <Route component={Home} exact path="/"/>
                 <Route component={Login} exact path="/login"/>
                 <Route component={SignUp} exact path="/signup"/>
