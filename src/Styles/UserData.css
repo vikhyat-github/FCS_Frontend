@@ -1,0 +1,36 @@
+.details {
+  margin-left: 2vw;
+  margin-right: 2vw;
+  height: 80px;
+  width: 95vw;
+  border-radius: 5px;
+  padding: 1.7rem;
+  border: 1px solid rgba(190, 190, 190, 0.74);
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: white;
+  margin-bottom: 2px;
+  
+}
+
+.details:hover {
+  box-shadow: 0px 0px 40px rgba(134, 134, 134, 0.2);
+  border-color: orange;
+  transform: scale(1.01);
+  
+}
+
+.name{
+    float: left;
+    /* background-color: tomato; */
+    width: 50%;
+    
+    
+    
+}
+
+.role{
+    margin-left: 50%;
+    /* background-color: blue; */
+    
+}

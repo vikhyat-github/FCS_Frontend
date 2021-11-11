@@ -13,10 +13,9 @@ function Login() {
     const [password, setPassword] = useState("")
     const [ {}, dispatch] = useStateValue();
     const [{accesstoken}, tokenDispatch] = useStateValue()
-    console.log(`accesstoken is ${accesstoken}`)
     const login = () => {
         console.log(email)
-        fetch(`${process.env.REACT_APP_BACKEND}/api/auth/refreshLogin`, {
+        fetch(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
             method: 'POST',
             mode:'cors',
             credentials:'include',

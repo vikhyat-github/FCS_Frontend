@@ -1,0 +1,24 @@
+.heading {
+  display: grid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: black;
+  
+}
+.heading>h1:hover{
+    color: orange;
+    
+}
+.heading > h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  font-size: 3vw;
+  border-radius: 4px;
+  color: white;
+  align-items: center;
+  margin-left: 38vw;
+  
+}
