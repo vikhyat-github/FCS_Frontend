@@ -5,9 +5,12 @@ import Navigation from './Components/Navigation';
 import { actionTypes } from './app/reducer';
 import jwtDecode from 'jwt-decode';
 import { useStateValue } from './StateProvider';
+import { useHistory } from 'react-router';
 // import jwtDecode from 'jwt-decode';
 function App() {
-  const [{}, dispatch] = useStateValue()
+  const history = useHistory()
+  const [{user}, dispatch] = useStateValue()
+  console.log(user)
   const [loadingState, setLoading] = useState(false)
   useEffect(() => {
     fetch(`${process.env.REACT_APP_REFRESHLOGIN}`, {
@@ -15,7 +18,7 @@ function App() {
       credentials:'include',
       mode:'cors',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
       
     }).then(res => 
@@ -31,6 +34,7 @@ function App() {
           type: actionTypes.SET_TOKEN,
           accesstoken: data.accesstoken
         })
+        // history.push("/")
         // console.log(data)
       }
       setLoading(false)

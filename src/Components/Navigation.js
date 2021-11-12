@@ -18,17 +18,15 @@ function Navigation() {
     return (
         <Router >
             {
-            !user ? <Switch>
+            user ? <Switch>
                 <Route component={Home} exact path="/"/>
-                <Route component={Login} exact path="/login"/>
-                <Route component={SignUp} exact path="/signup"/>
                 <Route component={Checkout} exact path="/checkout" /> 
                 <Route component={Item} exact path="/product:productId" />
                 <Route component={StripeContainer} exact path="/payment"/> 
                 <Route component={Profile} exact path="/profile" />
                 <Route component={UserPage} exact path="/userPage"/>
                 <Route component={Error} exact path="/404" />
-                <Redirect to="/404" />
+                <Redirect to="/" />
             </Switch> : 
             <Switch>
                 <Route component={Login} exact path="/login"/>

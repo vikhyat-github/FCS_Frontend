@@ -39,7 +39,7 @@ function SignUp() {
                     role:role.role
                 })
             }).then(res => res.json()).then(data => {
-                console.log(data)
+                // console.log(data)
                 dispatch({
                     type: actionTypes.SET_USER,
                     user: jwtDecode(data.accesstoken).user

@@ -13,6 +13,7 @@ function Login() {
     const [password, setPassword] = useState("")
     const [ {}, dispatch] = useStateValue();
     const [{accesstoken}, tokenDispatch] = useStateValue()
+    const [error, setError] = useState()
     const login = () => {
         console.log(email)
         fetch(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
@@ -28,15 +29,23 @@ function Login() {
                 password : password
             })
         }).then(res => res.json()).then(data =>
-           { dispatch({
-                type: actionTypes.SET_USER,
-                user: jwtDecode(data.accesstoken).user
-            })
-            dispatch({
-                type: actionTypes.SET_TOKEN,
-                accesstoken: data.accesstoken
-            })
-            history.push("/")
+           { 
+            if(data.error)
+            {
+                setError(data.error)
+            }
+            else{
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: jwtDecode(data.accesstoken).user
+                })
+                dispatch({
+                    type: actionTypes.SET_TOKEN,
+                    accesstoken: data.accesstoken
+                })
+                history.push("/")
+            }
+            
             
         })
 
@@ -73,7 +82,8 @@ function Login() {
                             variant="outlined"
                             onChange={e=>setPassword(e.target.value)}
                         />
-                        <div className="login__button" onClick={login}>Login</div>            
+                        <div className="login__button" onClick={login}>Login</div>  
+                        <span style={{color:'red'}}>{error}</span>          
                     </div>
                     <div className="other__option">
                         <span className="text__container"> OR </span>
