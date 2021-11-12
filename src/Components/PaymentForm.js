@@ -52,14 +52,11 @@ export default function PaymentForm() {
         );
 
         if (response.data.success) {
-          console.log("Payment is SuccesFul");
           setAccepted(true);
         }
       } catch (error) {
-        console.log("Unsuccesfull", error);
       }
     } else {
-      console.log(error.message);
     }
   };
 

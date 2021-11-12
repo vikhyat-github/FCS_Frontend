@@ -15,7 +15,6 @@ function Login() {
     const [{accesstoken}, tokenDispatch] = useStateValue()
     const [error, setError] = useState()
     const login = () => {
-        console.log(email)
         fetch(`${process.env.REACT_APP_BACKEND}/api/auth/login`, {
             method: 'POST',
             mode:'cors',

@@ -9,8 +9,7 @@ function UserPage() {
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND}/user/getall`)
       .then((res) => res.json())
-      .then((data) => {setUsers(data.users)
-      console.log(data)});
+      .then((data) => {setUsers(data.users)});
   }, []);
 
   return (

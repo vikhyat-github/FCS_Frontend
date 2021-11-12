@@ -45,7 +45,6 @@ export const basketSlice = createSlice({
       const index = state.items.findIndex(
         (basketItem) => basketItem.id === action.payload.id
       );
-      console.log(index);
 
       const cartItem = state.items.find(
         (item) => item.id === action.payload.id

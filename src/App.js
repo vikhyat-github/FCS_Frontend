@@ -10,7 +10,6 @@ import { useHistory } from 'react-router';
 function App() {
   const history = useHistory()
   const [{user}, dispatch] = useStateValue()
-  console.log(user)
   const [loadingState, setLoading] = useState(false)
   useEffect(() => {
     fetch(`${process.env.REACT_APP_REFRESHLOGIN}`, {
@@ -35,7 +34,6 @@ function App() {
           accesstoken: data.accesstoken
         })
         // history.push("/")
-        // console.log(data)
       }
       setLoading(false)
     })

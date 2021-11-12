@@ -39,7 +39,6 @@ function SignUp() {
                     role:role.role
                 })
             }).then(res => res.json()).then(data => {
-                // console.log(data)
                 dispatch({
                     type: actionTypes.SET_USER,
                     user: jwtDecode(data.accesstoken).user
@@ -92,9 +91,7 @@ function SignUp() {
                                 error={dob.error}
                                 fullWidth
                                 variant="outlined"
-                                onChange={e=>{setDOB({...dob, dob : e.target.value, error:checkDOB(e.target.value)})
-                                console.log(dob.error)
-                            }}
+                                onChange={e=>{setDOB({...dob, dob : e.target.value, error:checkDOB(e.target.value)})}}
                             />
                             <span style={{color:"red"}}>{dob.error}</span>
                             <TextField className="text-field"
