@@ -39,32 +39,28 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Sreen Shots from the Website
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### login
+<img width="1440" alt="Screenshot 2021-12-21 at 1 24 06 AM" src="https://user-images.githubusercontent.com/55956769/146825177-fa7ee77c-c4e9-41e3-af83-e31965ded82a.png">
 
-### Code Splitting
+### HomePage
+<img width="1440" alt="Screenshot 2021-12-21 at 1 24 28 AM" src="https://user-images.githubusercontent.com/55956769/146825224-53a016ae-79b6-41e8-87c3-588700718122.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Product Card
+<img width="1440" alt="Screenshot 2021-12-21 at 1 25 03 AM" src="https://user-images.githubusercontent.com/55956769/146825265-275d9fe7-dd6f-402d-b784-cd251aba8342.png">
 
-### Analyzing the Bundle Size
+### Cart 
+<img width="1440" alt="Screenshot 2021-12-21 at 1 25 22 AM" src="https://user-images.githubusercontent.com/55956769/146825297-70a322e8-bcf9-4e37-a865-cb5bec4aba57.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### User Profile
+<img width="1440" alt="Screenshot 2021-12-21 at 1 25 35 AM" src="https://user-images.githubusercontent.com/55956769/146825315-2d555406-af50-42f1-ac3c-a7431198ba03.png">
 
-### Making a Progressive Web App
+### Footer
+<img width="1440" alt="Screenshot 2021-12-21 at 1 24 55 AM" src="https://user-images.githubusercontent.com/55956769/146825351-7b7760e7-9b21-4a31-9af4-d510cf9295e4.png">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
